@@ -35,7 +35,7 @@ def check_for_duplicates(df):
             for index, row in df.iterrows():
                 email = row['Email']
                 phone_number = row['PhoneNumber']
-
+#sdf
                 cursor.execute(f"""
                     SELECT COUNT(*) 
                     FROM {target_table}
@@ -76,7 +76,7 @@ def insert_data_to_sql(df):
         index=False, 
         dtype={"Email": NVARCHAR(255), "PhoneNumber": NVARCHAR(30)}
     )
-    logging.info("✅ Data successfully inserted into the Employees table.")
+    logging.info("✅ Data successfully inserted into the Main table.")
 
 
 def execute_stored_procedures():
@@ -84,12 +84,12 @@ def execute_stored_procedures():
     Executes a series of stored procedures sequentially.
     """
     procedures = [
-        "LoadDepartment",
-        "LoadDesignation",
+        "LoadDepartments",
+        "LoadDesignations",
         "LoadEmployees",
         "LoadPayroll",
         "LoadTimesheet",
-        "MergeLeaveRecords"
+        "LoadLeaveRecords"
     ]
     
     with pyodbc.connect(conn_str) as cnxn:
