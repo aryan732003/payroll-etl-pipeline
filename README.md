@@ -40,7 +40,7 @@
       *   Leave Records Table
       *   Timesheets Table
   
-  ![Data Flow Diagram](images/Data_Flow.png)`)
+  ![Data Flow Diagram](images/Data_Flow.png)
   
   ## Setup
   
