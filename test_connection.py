@@ -7,13 +7,9 @@ import time
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def test_database_connection():
-    """
-    Test the connection to the database using SQLAlchemy engine.
-    Logs success or failure with detailed messages.
-    """
+
     engine = create_engine(Config.SQLALCHEMY_DATABASE_URI)
 
-   
     retry_attempts = 3
     retry_delay = 5  # seconds
 
